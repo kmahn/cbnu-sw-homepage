@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "start": "pm2 start dist/server.js",
+    "prestart": "npm run build:ssr",
     "dev": "ng serve --port 8000 -o --proxy-config proxy.config.json",
     "build": "ng build",
     "test": "ng test",
