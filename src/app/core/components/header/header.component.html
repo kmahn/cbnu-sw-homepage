@@ -1,0 +1,21 @@
+<header>
+  <ul class="top-menu">
+    <li>
+      <a routerLink="/account/login" *ngIf="!auth.loggedIn;else account">로그인</a>
+      <ng-template #account>
+        <span>{{auth.me?.name}} 로그인 중 - </span><a class="cursor pointer" (click)="auth.logout()">로그아웃</a>
+      </ng-template>
+    </li>
+    <li>
+      <a routerLink="/">Home</a>
+    </li>
+    <li>
+      <a routerLink="/notice">공지사항</a>
+    </li>
+  </ul>
+  <div class="brand-image-container">
+    <a routerLink="/home">
+      <img src="assets/images/logo-hs.png" alt="brand image"/>
+    </a>
+  </div>
+</header>

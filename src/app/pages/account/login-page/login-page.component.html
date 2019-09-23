@@ -1,0 +1,17 @@
+
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <div class="form-container mat-elevation-z2">
+    <div class="logo">
+      <img class="brand-logo" src="assets/images/logo-v.png" alt="logo"/>
+    </div>
+
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="username"/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" formControlName="password"/>
+    </mat-form-field>
+
+    <button type="submit" class="login-button" mat-flat-button color="primary" [disabled]="loading">로그인</button>
+  </div>
+</form>

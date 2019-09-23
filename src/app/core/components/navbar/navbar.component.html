@@ -1,0 +1,10 @@
+<ul class="navbar">
+  <li class="logo" *ngIf="isTop">
+    <a routerLink="/home">
+      <img src="assets/images/logo.png" alt="logo"/>
+    </a>
+  </li>
+  <li *ngFor="let menu of menus">
+    <a [routerLink]="menu.link" routerLinkActive="active">{{menu.name}}</a>
+  </li>
+</ul>

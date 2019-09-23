@@ -1,0 +1,39 @@
+:host {
+  position: sticky;
+  top: 0;
+  display: block;
+  z-index: 1000;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+  background: white;
+
+  li {
+    padding: 0.5em;
+    margin: 1em;
+
+    &.logo {
+      img {
+        height: 20px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #555;
+
+      &:hover, &.active {
+        color: black;
+      }
+
+      &.active {
+        font-weight: bolder;
+      }
+    }
+  }
+
+}

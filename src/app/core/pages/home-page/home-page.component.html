@@ -1,0 +1,17 @@
+<div class="intro">
+</div>
+
+<div class="notices">
+  <h4 class="header">최근 공지</h4>
+  <mat-list role="list" class="mat-elevation-z2">
+    <mat-list-item role="listitem" *ngIf="notices.length === 0" class="empty">등록된 공지가 없습니다.</mat-list-item>
+    <mat-list-item role="listitem" *ngFor="let notice of notices" [routerLink]="['/notice', notice._id]">
+      <div class="list-item cursor pointer">
+        <div class="no">{{notice.no}}</div>
+        <div class="title">{{notice.title}}</div>
+        <div class="hits"><small>조회수: {{notice.hits}}</small></div>
+        <div class="date"><small>작성일: {{notice.createdAt | date: 'yyyy.MM.dd'}}</small></div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>

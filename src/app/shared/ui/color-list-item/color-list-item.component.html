@@ -1,0 +1,10 @@
+<div class="circle-wrapper">
+  <div class="circle" [style.background]="color"></div>
+  <div class="line" [style.background]="color"></div>
+</div>
+<div class="content-wrapper">
+  <cbnu-color-list-item-title [title]="item.title"></cbnu-color-list-item-title>
+  <ul class="list">
+    <li class="list-item" *ngFor="let i of item.list" [innerHTML]="i"></li>
+  </ul>
+</div>

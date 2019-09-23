@@ -1,0 +1,22 @@
+.form-container {
+  width: 50%;
+  min-width: 500px;
+  margin: 50px auto;
+  padding: 2em;
+
+  .login-button {
+    width: 100%;
+    display: block;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+  margin: 1.5em 0 0;
+}
+
+.brand-logo {
+  display: block;
+  margin: 0 auto;
+  height: 150px;
+}

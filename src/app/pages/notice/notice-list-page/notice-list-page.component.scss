@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  min-height: 60vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.list-item {
+  display: flex;
+  color: #555;
+  width: 100%;
+
+  border-bottom: 1px solid #ddd;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .no {
+    width: 5em;
+    text-align: right;
+    margin-right: 1.5em;
+  }
+
+  .title {
+    margin-right: auto;
+  }
+
+  .hits {
+    margin-right: 1em;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "/auth": {
+    "target": "http://localhost:4000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/api": {
+    "target": "http://localhost:4000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/resources": {
+    "target": "http://localhost:4000",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}
