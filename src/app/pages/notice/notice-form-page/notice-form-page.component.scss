@@ -1,0 +1,22 @@
+.form-container {
+  width: 50%;
+  min-width: 500px;
+  margin: 50px auto;
+  padding: 2em;
+
+  .editor-wrapper {
+    margin: 0 0 1em;
+    padding: 0 1em 0.5em;
+    border: 1px solid #ddd;
+  }
+
+  .submit-button {
+    width: 100%;
+    display: block;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+  margin: 1.5em 0 0;
+}

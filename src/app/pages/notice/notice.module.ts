@@ -5,8 +5,10 @@ import { NoticeRoutingModule } from './notice-routing.module';
 import { NoticeListPageComponent } from './notice-list-page/notice-list-page.component';
 import { NoticeDetailPageComponent } from './notice-detail-page/notice-detail-page.component';
 import { NoticeService } from '../../shared/services/notice/notice.service';
-import { MatButtonModule, MatListModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatListModule } from '@angular/material';
 import { NoticeFormPageComponent } from './notice-form-page/notice-form-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UiModule } from '../../shared/ui/ui.module';
 
 
 @NgModule({
@@ -18,8 +20,12 @@ import { NoticeFormPageComponent } from './notice-form-page/notice-form-page.com
   imports: [
     CommonModule,
     NoticeRoutingModule,
+    ReactiveFormsModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    UiModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [NoticeService]
 })

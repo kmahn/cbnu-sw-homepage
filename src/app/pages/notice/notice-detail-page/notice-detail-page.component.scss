@@ -1,0 +1,33 @@
+cbnu-subtitle {
+  margin: 2em 0;
+}
+
+.info {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+  div {
+    margin: 1em;
+    color: #555;
+
+    &:first-child {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+}
+
+.cbnu-editable {
+  margin: 1em 0;
+}
+
+.container {
+  min-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.button-wrapper {
+  text-align: right;
+}

@@ -1,1 +1,16 @@
-<p>notice-detail-page works!</p>
+<cbnu-section-header title="공지사항"></cbnu-section-header>
+<cbnu-subtitle [title]="notice?.title"></cbnu-subtitle>
+<div class="container">
+  <div class="info">
+    <div><small>글번호: {{notice?.no | number}}</small></div>
+    <div><small>작성자: {{notice?.author?.name}}</small></div>
+    <div><small>작성일: {{notice?.createdAt | date: 'yyyy.MM.dd'}}/수정일: {{notice?.updatedAt | date: 'yyyy.MM.dd'}}</small></div>
+    <div><small>조회수: {{notice?.hits | number}}</small></div>
+  </div>
+  <div class="cbnu-editable" [innerHTML]="notice?.content"></div>
+  <div class="button-wrapper">
+    <button mat-flat-button color="warn"
+            [routerLink]="['/notice/edit', notice._id]"
+            *ngIf="auth.me?._id === notice?.author?._id">수정하기</button>
+  </div>
+</div>

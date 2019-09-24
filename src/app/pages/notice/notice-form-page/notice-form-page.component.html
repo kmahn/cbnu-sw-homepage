@@ -1,1 +1,14 @@
-<p>notice-form-page works!</p>
+<cbnu-section-header [title]="'공지사항' + (notice ? '수정' : '등록')"></cbnu-section-header>
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <div class="form-container mat-elevation-z2">
+    <mat-form-field>
+      <input matInput formControlName="title" placeholder="제목">
+    </mat-form-field>
+    <div class="editor-wrapper">
+      <cbnu-editor formControlName="content"></cbnu-editor>
+    </div>
+    <button type="submit" class="submit-button" mat-flat-button color="primary"
+            [disabled]="loading">{{notice ? '수정' : '등록'}}</button>
+    
+  </div>
+</form>

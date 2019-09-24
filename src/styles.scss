@@ -47,3 +47,57 @@ body {
     cursor: pointer;
   }
 }
+
+.cbnu-editable {
+  * {
+    color: #444;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0.5em 0;
+  }
+
+  * {
+    font-size: inherit !important;
+  }
+
+  p {
+    font-size: 1rem !important;
+    margin: 0 0 0.5em !important;
+
+    b {
+      font-weight: 900 !important;
+    }
+  }
+
+  h6 {
+    font-size: 1.25rem !important;
+  }
+
+  h5 {
+    font-size: 1.5rem !important;
+  }
+
+  h4 {
+    font-size: 1.75rem !important;
+  }
+
+  h3 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 2.25rem !important;
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  img, video {
+    display: block;
+    max-width: 90%;
+    margin: 1em auto;
+  }
+}
+

@@ -11,7 +11,6 @@ import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
 import { MatListModule } from '@angular/material';
 
 
-
 @NgModule({
   declarations: [NavbarComponent, FooterComponent, HeaderComponent, HomePageComponent],
   imports: [
