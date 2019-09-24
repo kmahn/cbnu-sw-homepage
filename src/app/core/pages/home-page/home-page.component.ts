@@ -16,6 +16,7 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.noticeService.getNotices().subscribe(notices => this.notices = notices.slice(0, 5));
   }
 
 }
