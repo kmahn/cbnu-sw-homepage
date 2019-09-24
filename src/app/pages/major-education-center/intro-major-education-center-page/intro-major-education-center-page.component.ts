@@ -12,9 +12,9 @@ export class IntroMajorEducationCenterPageComponent implements OnInit {
     {
       title: '<strong>교육지원 프로그램</strong> 운영',
       list: [
-        'Catch-Up: 성적저조자 지원 특별강의',
-        'Keep-Up: 교과목 그룹 튜터링',
-        'Solve-Up: 알고리즘 학습 지원',
+        'Catch-Up&reg;: 성적저조자 지원 특별강의',
+        'Keep-Up&reg;: 교과목 그룹 튜터링',
+        'Solve-Up&reg;: 알고리즘 학습 지원',
         '실험실습 TA 지원, 교과목 Grader 지원'
       ]
     },

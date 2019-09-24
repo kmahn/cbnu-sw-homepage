@@ -12,8 +12,8 @@ export class IntroIndustryAcademicCooperationCenterPageComponent implements OnIn
     {
       title: '<strong>프로젝트 교과</strong> 운영지원',
       list: [
-        '저학년 프로젝트 교과 대상 Base-Up 프로그램 지원',
-        '고학년 프로젝트 교과 대상 Grow-Up 프로그램 지원',
+        '저학년 프로젝트 교과 대상 Base-Up&reg; 프로그램 지원',
+        '고학년 프로젝트 교과 대상 Grow-Up&reg; 프로그램 지원',
       ]
     },
     {
@@ -21,7 +21,7 @@ export class IntroIndustryAcademicCooperationCenterPageComponent implements OnIn
       list: [
         '산학프로젝트 교과목의 주제 발굴',
         '산학공동프로젝트 발굴 및 지원',
-        'Engage-Up 프로그램 운영 지원',
+        'Engage-Up&reg; 프로그램 운영 지원',
       ]
     },
     {
