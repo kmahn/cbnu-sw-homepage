@@ -99,5 +99,18 @@ body {
     max-width: 90%;
     margin: 1em auto;
   }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  table, td, th {
+    border: 1px solid #ddd;
+    margin: 0 auto;
+  }
+
+  td, th {
+    padding: 0.5em 1em;
+  }
 }
 

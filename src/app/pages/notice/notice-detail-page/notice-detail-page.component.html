@@ -8,9 +8,9 @@
     <div><small>조회수: {{notice?.hits | number}}</small></div>
   </div>
   <div class="cbnu-editable" [innerHTML]="notice?.content"></div>
-  <div class="button-wrapper">
-    <button mat-flat-button color="warn"
-            [routerLink]="['/notice/edit', notice._id]"
-            *ngIf="auth.me?._id === notice?.author?._id">수정하기</button>
+  <div class="button-wrapper" *ngIf="auth.me?._id === notice?.author?._id">
+    <button mat-flat-button color="warn">삭제하기</button>
+    <button mat-flat-button color="primary"
+            [routerLink]="['/notice/edit', notice._id]">수정하기</button>
   </div>
 </div>

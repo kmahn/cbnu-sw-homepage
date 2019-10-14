@@ -41,7 +41,6 @@ export class NoticeFormPageComponent implements OnInit, OnDestroy {
     const notice = this.formGroup.getRawValue();
     const observable: Observable<any> = notice._id ? this.noticeService.updateNotice(notice._id, notice) : this.noticeService.createNotice(notice);
     observable.subscribe(id => {
-      console.log(id);
       if (!notice._id) {
         this.router.navigate(['/notice', id]);
       } else {
