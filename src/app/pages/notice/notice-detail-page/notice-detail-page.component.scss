@@ -1,5 +1,6 @@
 cbnu-subtitle {
   margin: 2em 0;
+  text-align: center;
 }
 
 .info {
@@ -30,4 +31,8 @@ cbnu-subtitle {
 
 .button-wrapper {
   text-align: right;
+
+  button {
+    margin: 0.5em;
+  }
 }

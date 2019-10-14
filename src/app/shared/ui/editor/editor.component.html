@@ -1,7 +1,2 @@
-<cbnu-editor-toolbar [editorElement]="editor" (clickToolButton)="clickToolButton()"></cbnu-editor-toolbar>
-<div class="cbnu-editable border p-2"
-     #editor
-     [cbnuContentEditable]="editable"
-     [content]="value"
-     (changeContent)="onChange($event)"
-     [style.min-height]="minHeight"></div>
+<ckeditor [editor]="editor" [config]="config"
+          (change)="valueChange($event)"></ckeditor>

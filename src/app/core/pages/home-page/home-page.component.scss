@@ -1,6 +1,6 @@
 :host {
   display: block;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .intro {
@@ -17,7 +17,7 @@
 .notices {
   width: 80vh;
   min-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 3em;
 
   .header {
     margin: 2em 0 1em;
