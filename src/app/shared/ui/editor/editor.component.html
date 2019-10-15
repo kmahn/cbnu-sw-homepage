@@ -1,2 +1,2 @@
 <ckeditor [editor]="editor" [config]="config"
-          (change)="valueChange($event)"></ckeditor>
+          (change)="valueChange($event)" *ngIf="isBrowser"></ckeditor>

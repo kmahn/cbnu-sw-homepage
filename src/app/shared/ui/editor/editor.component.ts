@@ -1,8 +1,9 @@
-import { Component, forwardRef, OnInit, Provider, ViewChild } from '@angular/core';
+import { Component, forwardRef, Inject, OnInit, PLATFORM_ID, Provider, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent, CKEditor5, CKEditorComponent } from '@ckeditor/ckeditor5-angular';
 import { StorageService } from '../../../core/services/storage/storage.service';
+import { isPlatformBrowser } from '@angular/common';
 
 const CONTROL_ACCESSOR: Provider = {
   provide: NG_VALUE_ACCESSOR,
@@ -103,12 +104,18 @@ export class EditorComponent implements OnInit, ControlValueAccessor {
   editor = ClassicEditor;
   disabled: boolean;
   config: CKEditor5.Config;
-  @ViewChild(CKEditorComponent, { static: true }) ckeditor: CKEditorComponent;
+  @ViewChild(CKEditorComponent, { static: false }) ckeditor: CKEditorComponent;
 
-  constructor(private storage: StorageService) {
-    this.config = {
-      extraPlugins: [uploaderAdapterPluginFactory('/api/notices/upload', this.storage.get('token'))]
-    };
+  constructor(private storage: StorageService, @Inject(PLATFORM_ID) private platformId) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.config = {
+        extraPlugins: [uploaderAdapterPluginFactory('/api/notices/upload', this.storage.get('token'))]
+      };
+    }
+  }
+
+  get isBrowser(): boolean {
+    return isPlatformBrowser(this.platformId);
   }
 
   registerOnChange(fn: any): void {
@@ -124,11 +131,13 @@ export class EditorComponent implements OnInit, ControlValueAccessor {
   }
 
   writeValue(obj: string): void {
-    this.ckeditor.writeValue(obj);
+    if (isPlatformBrowser(this.platformId)) {
+      this.ckeditor.writeValue(obj);
+    }
   }
 
   valueChange({ editor }: ChangeEvent) {
-    if (editor) {
+    if (isPlatformBrowser(this.platformId) && editor) {
       this.onChange(editor.getData());
     }
   }
