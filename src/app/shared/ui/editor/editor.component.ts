@@ -104,18 +104,12 @@ export class EditorComponent implements OnInit, ControlValueAccessor {
   editor = ClassicEditor;
   disabled: boolean;
   config: CKEditor5.Config;
-  @ViewChild(CKEditorComponent, { static: false }) ckeditor: CKEditorComponent;
+  @ViewChild(CKEditorComponent, { static: true }) ckeditor: CKEditorComponent;
 
-  constructor(private storage: StorageService, @Inject(PLATFORM_ID) private platformId) {
-    if (isPlatformBrowser(this.platformId)) {
-      this.config = {
-        extraPlugins: [uploaderAdapterPluginFactory('/api/notices/upload', this.storage.get('token'))]
-      };
-    }
-  }
-
-  get isBrowser(): boolean {
-    return isPlatformBrowser(this.platformId);
+  constructor(private storage: StorageService) {
+    this.config = {
+      extraPlugins: [uploaderAdapterPluginFactory('/api/notices/upload', this.storage.get('token'))]
+    };
   }
 
   registerOnChange(fn: any): void {
@@ -131,13 +125,11 @@ export class EditorComponent implements OnInit, ControlValueAccessor {
   }
 
   writeValue(obj: string): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.ckeditor.writeValue(obj);
-    }
+    this.ckeditor.writeValue(obj);
   }
 
   valueChange({ editor }: ChangeEvent) {
-    if (isPlatformBrowser(this.platformId) && editor) {
+    if (this.onChange) {
       this.onChange(editor.getData());
     }
   }
