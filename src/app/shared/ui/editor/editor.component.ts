@@ -1,9 +1,8 @@
-import { Component, forwardRef, Inject, OnInit, PLATFORM_ID, Provider, ViewChild } from '@angular/core';
+import { Component, forwardRef, OnInit, Provider, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent, CKEditor5, CKEditorComponent } from '@ckeditor/ckeditor5-angular';
 import { StorageService } from '../../../core/services/storage/storage.service';
-import { isPlatformBrowser } from '@angular/common';
 
 const CONTROL_ACCESSOR: Provider = {
   provide: NG_VALUE_ACCESSOR,

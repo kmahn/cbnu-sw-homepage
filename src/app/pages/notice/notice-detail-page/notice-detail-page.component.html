@@ -11,6 +11,6 @@
   <div class="button-wrapper" *ngIf="auth.me?._id === notice?.author?._id">
     <button mat-flat-button color="warn">삭제하기</button>
     <button mat-flat-button color="primary"
-            [routerLink]="['/notice/edit', notice._id]">수정하기</button>
+            [routerLink]="['/notice/edit', notice?.no]">수정하기</button>
   </div>
 </div>

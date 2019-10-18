@@ -1,6 +1,6 @@
 :host {
   display: block;
-  height: 100vh;
+  min-height: 70vh;
 }
 
 .intro {
@@ -15,9 +15,11 @@
 }
 
 .notices {
-  width: 80vh;
   min-width: 800px;
+  width: 80vh;
   margin: 0 auto;
+
+  padding: 2em 0;
 
   .header {
     margin: 2em 0 1em;
@@ -42,10 +44,18 @@
   }
 
   .title {
+    width: 100%;
     margin-right: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
   }
 
   .hits {
     margin-right: 1em;
+  }
+  .hits, .date {
+    flex: 0 0 auto;
   }
 }
