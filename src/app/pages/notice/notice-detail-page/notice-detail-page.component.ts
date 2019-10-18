@@ -5,6 +5,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { NoticeService } from '../../../shared/services/notice/notice.service';
 import { Notice } from '../../../models/notice';
 import { AuthService } from '../../../core/services/auth/auth.service';
+import { User } from '../../../models/user';
 
 @Component({
   selector: 'cbnu-notice-detail-page',
@@ -19,7 +20,12 @@ export class NoticeDetailPageComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private noticeService: NoticeService,
-              public auth: AuthService) { }
+              public auth: AuthService) {
+  }
+
+  get isMyNotice(): boolean {
+    return (this.auth.me || {} as User)._id === (this.notice || {} as Notice).author._id;
+  }
 
   ngOnInit() {
     this.subscriptions.push(

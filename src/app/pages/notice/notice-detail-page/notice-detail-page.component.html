@@ -7,10 +7,14 @@
     <div><small>작성일: {{notice?.createdAt | date: 'yyyy.MM.dd'}}/수정일: {{notice?.updatedAt | date: 'yyyy.MM.dd'}}</small></div>
     <div><small>조회수: {{notice?.hits | number}}</small></div>
   </div>
-  <div class="cbnu-editable" [innerHTML]="notice?.content"></div>
-  <div class="button-wrapper" *ngIf="auth.me?._id === notice?.author?._id">
-    <button mat-flat-button color="warn">삭제하기</button>
-    <button mat-flat-button color="primary"
+  <div class="tools">
+<!--    <button mat-flat-button color="warn" *ngIf="isMyNotice">삭제하기</button>-->
+    <button mat-flat-button color="accent"
+            *ngIf="isMyNotice"
             [routerLink]="['/notice/edit', notice?.no]">수정하기</button>
+  </div>
+  <div class="cbnu-editable" [innerHTML]="notice?.content"></div>
+  <div class="button-wrapper">
+    <button mat-flat-button class="list-button" color="primary" routerLink="/notice">목 록</button>
   </div>
 </div>
