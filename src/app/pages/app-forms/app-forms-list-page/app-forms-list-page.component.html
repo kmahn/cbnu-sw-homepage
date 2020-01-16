@@ -1,0 +1,13 @@
+<mat-button-toggle-group [formControl]="choiceControl" *ngIf="auth.isAdmin">
+  <mat-button-toggle value="list">신청서 목록</mat-button-toggle>
+  <mat-button-toggle value="manage">신청서 관리</mat-button-toggle>
+</mat-button-toggle-group>
+<div class="header" *ngIf="!auth.isAdmin">
+  <h2>신청서 목록</h2>
+  <button mat-flat-button color="primary" routerLink="/notice/edit" *ngIf="auth.isAdmin">공지 추가</button>
+</div>
+
+<div class="container">
+  <cbnu-questionnaire-list *ngIf="choice === 'list'"></cbnu-questionnaire-list>
+  <cbnu-app-forms-list *ngIf="choice === 'manage'"></cbnu-app-forms-list>
+</div>

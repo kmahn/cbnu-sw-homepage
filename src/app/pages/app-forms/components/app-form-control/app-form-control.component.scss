@@ -1,0 +1,22 @@
+.input-wrapper {
+  padding: 0 0.5em;
+}
+
+.label {
+  .required {
+    color: red;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-radio-group, .checkbox-wrapper{
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  mat-radio-button, mat-checkbox {
+    margin-bottom: 0.5em;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="tools">
+  <button mat-flat-button color="primary" routerLink="/forms/edit">신청서 양식 추가</button>
+</div>
+
+<mat-list role="list" class="mat-elevation-z2">
+  <mat-list-item role="listitem" *ngIf="forms.length === 0" class="empty">등록된 신청서 양식이 없습니다.</mat-list-item>
+  <mat-list-item role="listitem" *ngFor="let form of forms" [routerLink]="['/form', form.no]">
+    <div class="list-item cursor pointer">
+      <div class="no">{{form.no}}</div>
+      <div class="title">{{form.title}}</div>
+      <div class="date"><small>작성일: {{form.createdAt | date: 'yyyy.MM.dd'}}</small></div>
+      <div class="open"><small>{{form.open ? '공개' : '비공개'}}</small></div>
+      <div class="response"><small>{{form.response ? '신청중' : '신청마감'}}</small></div>
+    </div>
+  </mat-list-item>
+</mat-list>

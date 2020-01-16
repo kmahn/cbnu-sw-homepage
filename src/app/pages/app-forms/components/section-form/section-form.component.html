@@ -1,0 +1,50 @@
+<div [formGroup]="questionGroup">
+  <div class="remove-button-wrapper">
+    <button type="button" mat-button color="warn" (click)="removeQuestion()">
+      질문삭제
+    </button>
+  </div>
+  <div class="flex-row">
+    <mat-form-field class="label">
+      <input matInput [placeholder]="type === 'description' ? '제목' : '라벨'" autocomplete="off" formControlName="label">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>질문형식</mat-label>
+      <mat-select formControlName="type" (selectionChange)="changeType($event)">
+        <mat-option *ngFor="let option of typeOptions" [value]="option.value">
+          {{option.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="w-100">
+      <textarea matInput placeholder="설명" autocomplete="off" formControlName="description"></textarea>
+    </mat-form-field>
+  </div>
+  <div *ngIf="options.controls.length > 0">
+    <div *ngFor="let control of options.controls; let i=index;">
+      <div class="flex-row align-center">
+        <div class="icon-wrapper" *ngIf="type === 'radio'">
+          <mat-icon>radio_button_checked</mat-icon>
+        </div>
+        <div class="icon-wrapper" *ngIf="type === 'checkbox'">
+          <mat-icon>check_box</mat-icon>
+        </div>
+        <mat-form-field><input matInput [formControl]="getOptionControl(i)"></mat-form-field>
+      </div>
+    </div>
+    <div class="flex-row align-center cursor pointer add-option" (click)="addOption()">
+      <div class="icon-wrapper" *ngIf="type === 'radio'">
+        <mat-icon>radio_button_checked</mat-icon>
+      </div>
+      <div class="icon-wrapper" *ngIf="type === 'checkbox'">
+        <mat-icon>check_box</mat-icon>
+      </div>
+      <p>옵션 추가</p>
+    </div>
+  </div>
+  <div class="required" *ngIf="type !== 'description'">
+    <mat-slide-toggle (change)="changeRequired($event)">필수입력</mat-slide-toggle>
+  </div>
+</div>

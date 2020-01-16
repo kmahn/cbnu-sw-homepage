@@ -1,0 +1,16 @@
+<div [formGroup]="sectionGroup">
+  <div class="remove-button-wrapper">
+    <button type="button" mat-button color="warn" (click)="removeSection()">
+      섹션 삭제
+    </button>
+  </div>
+  <mat-form-field class="w-100">
+    <input matInput placeholder="섹션 제목" autocomplete="off" formControlName="title">
+  </mat-form-field>
+  <div class="mat-elevation-z1 padding" *ngFor="let form of forms.controls;let i=index;">
+    <cbnu-section-form [question]="form" [index]="index" (remove)="removeQuestion($event)"></cbnu-section-form>
+  </div>
+  <div class="tools">
+    <button type="button" mat-stroked-button color="primary" (click)="addQuestion()">질문 추가</button>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+.container {
+  margin: 2em auto;
+  max-width: 1000px;
+
+  section {
+    margin-bottom: 0.5em;
+    padding: 0;
+
+    .section-header {
+      padding: 0.5em 1em;
+      background-color: #f67b1f;
+      color: white;
+    }
+
+    .section-content {
+      padding: 2em;
+    }
+  }
+}
+
+.error {
+  text-align: right;
+  color: red;
+}
+
+.info {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+
+  div {
+    margin: 1em;
+    color: #555;
+
+    &:first-child {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+}
+
+.button-wrapper {
+  margin-top: 1em;
+  display: flex;
+
+  .submit-button {
+    width: 100%;
+    display: block;
+  }
+}
+
+.form-table {
+  td {
+    padding: 0.5em 1em;
+    border: 1px solid #ddd;
+  }
+}
+
+.description-form {
+  margin: 1.5em 0;
+  .description {
+    padding: 0.5em;
+  }
+}
+
+.input-form {
+  margin: 1.5em 0;
+}

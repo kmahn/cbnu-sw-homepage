@@ -1,0 +1,26 @@
+<div><h3 class="label">{{form.label}}<sup class="required" *ngIf="form.required">*</sup></h3></div>
+<div *ngIf="form.description" class="description">
+  <small>{{form.description}}</small>
+</div>
+<div [ngSwitch]="form.type">
+  <div *ngSwitchCase="'single-line'" class="input-wrapper">
+    <mat-form-field><input matInput autocomplete="off" (input)="changeValue($event.target.value)"></mat-form-field>
+  </div>
+  <div *ngSwitchCase="'multi-line'" class="input-wrapper">
+    <mat-form-field>
+      <textarea matInput autocomplete="off" (input)="changeValue($event.target.value)" cdkTextareaAutosize></textarea>
+    </mat-form-field>
+  </div>
+  <div *ngSwitchCase="'checkbox'" class="input-wrapper">
+    <div class="checkbox-wrapper">
+      <mat-checkbox *ngFor="let option of form.options" (change)="changeCheckedValue($event, option)">{{option}}</mat-checkbox>
+    </div>
+  </div>
+  <div *ngSwitchCase="'radio'" class="input-wrapper">
+    <mat-radio-group (change)="changeValue($event.value)">
+      <mat-radio-button *ngFor="let option of form.options" [value]="option">
+        {{option}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>

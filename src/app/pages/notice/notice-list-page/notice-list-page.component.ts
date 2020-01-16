@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticeService } from '../../../shared/services/notice/notice.service';
 import { Notice } from '../../../models/notice';
+import { AuthService } from '../../../core/services/auth/auth.service';
 
 @Component({
   selector: 'cbnu-notice-list-page',
@@ -11,7 +12,8 @@ export class NoticeListPageComponent implements OnInit {
 
   notices: Notice[] = [];
 
-  constructor(private noticeService: NoticeService) {
+  constructor(public auth: AuthService,
+              private noticeService: NoticeService) {
   }
 
   ngOnInit() {

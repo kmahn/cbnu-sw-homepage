@@ -29,6 +29,10 @@ export class AuthService {
     return this.userSubject.value;
   }
 
+  get isAdmin(): boolean {
+    return (this.me || { role: null }).role === 'admin';
+  }
+
   getMe(): void {
     this.http.get<Response<User>>(`${BASE_URL}/me`)
       .subscribe(

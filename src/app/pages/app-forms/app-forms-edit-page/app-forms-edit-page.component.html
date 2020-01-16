@@ -1,0 +1,18 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <div class="mat-elevation-z2 padding row-flex">
+    <mat-form-field class="w-100">
+      <input matInput placeholder="신청서 양식 제목" autocomplete="off" formControlName="title">
+    </mat-form-field>
+    <mat-slide-toggle (change)="changeOpen($event)">공개여부</mat-slide-toggle>
+  </div>
+  <div class="mat-elevation-z2 padding" *ngFor="let section of sections.controls; let i=index;">
+    <cbnu-app-forms-section [section]="section" [index]="i" (remove)="removeSection($event)"></cbnu-app-forms-section>
+  </div>
+  <div class="tools">
+    <button type="button" mat-stroked-button color="primary" (click)="addSection()">섹션 추가</button>
+  </div>
+
+  <div class="button-wrapper">
+    <button type="submit" class="submit-button" mat-flat-button color="primary">등록</button>
+  </div>
+</form>

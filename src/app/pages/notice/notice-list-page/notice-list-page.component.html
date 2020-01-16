@@ -1,6 +1,6 @@
 <div class="header">
   <h2>공지사항</h2>
-  <button mat-flat-button color="primary" routerLink="/notice/edit">공지 추가</button>
+  <button mat-flat-button color="primary" routerLink="/notice/edit" *ngIf="auth.isAdmin">공지 추가</button>
 </div>
 
 <mat-list role="list" class="mat-elevation-z2">
