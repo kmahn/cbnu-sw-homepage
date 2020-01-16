@@ -47,10 +47,6 @@ export class AuthService {
       );
   }
 
-  get isAdmin(): boolean {
-    return (this.me || {} as User).role === 'admin';
-  }
-
   loginAdmin(username: string, password: string): Observable<string> {
     return this.http.post<Response<string>>(`${BASE_URL}/login/admin`, { username, password }).pipe(
       map(res => res.data),
