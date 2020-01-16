@@ -6,7 +6,7 @@
     "start": "pm2 start dist/server.js",
     "prestart": "npm run build:ssr",
     "dev": "ng serve --host 0.0.0.0 --port 8000 -o --proxy-config proxy.config.json",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

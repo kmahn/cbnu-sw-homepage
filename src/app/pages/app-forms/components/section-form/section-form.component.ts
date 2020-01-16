@@ -65,7 +65,6 @@ export class SectionFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.questionGroup.getRawValue());
   }
 
 }
