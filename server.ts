@@ -21,6 +21,8 @@ import * as express from 'express';
 import { join } from 'path';
 
 // Express server
+// @ts-ignore
+global.window = global;
 const app = express();
 
 const PORT = +(process.env.PORT || 8080);
