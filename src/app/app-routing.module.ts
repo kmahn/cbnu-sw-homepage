@@ -20,7 +20,7 @@ const routes: Routes = [
   //   loadChildren: './pages/convergence-education-center/convergence-education-center.module#ConvergenceEducationCenterModule'
   // },
   // { path: 'oss', loadChildren: './pages/oss-center/oss-center.module#OssCenterModule' },
-  // { path: 'notice', loadChildren: './pages/notice/notice.module#NoticeModule' },
+  { path: 'notice', loadChildren: './pages/notice/notice.module#NoticeModule' },
   { path: 'forms', loadChildren: './pages/app-forms/app-forms.module#AppFormsModule' },
   { path: 'account', loadChildren: './pages/account/account.module#AccountModule' },
 ];
