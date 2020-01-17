@@ -1,0 +1,36 @@
+:host {
+  padding: 2em;
+  display: flex;
+  min-width: 1400px;
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  list-style: none;
+
+  .menu-item {
+    margin-bottom: 0.5em;
+
+    &.active {
+      background-color: #f67b1f;
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  a {
+    padding: 1em;
+    display: block;
+    width: 100%;
+    color: #555;
+    text-decoration: none;
+  }
+}
+
+.container {
+  margin: 0 auto;
+}

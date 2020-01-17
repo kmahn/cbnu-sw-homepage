@@ -1,0 +1,8 @@
+<ul class="side-menu">
+  <li class="menu-item mat-elevation-z2 cursor pointer" routerLinkActive="active" *ngFor="let menu of menus">
+    <a [routerLink]="menu.link">{{menu.name}}</a>
+  </li>
+</ul>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
