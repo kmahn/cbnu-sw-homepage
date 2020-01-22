@@ -127,10 +127,8 @@ export class EditorComponent implements OnInit, ControlValueAccessor {
     this.ckeditor.writeValue(obj);
   }
 
-  valueChange({ editor }: ChangeEvent) {
-    if (editor) {
-      this.onChange(editor.getData());
-    }
+  getData() {
+    this.onChange(this.ckeditor.editorInstance.getData());
   }
 
   ngOnInit() {

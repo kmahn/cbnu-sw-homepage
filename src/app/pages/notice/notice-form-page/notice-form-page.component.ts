@@ -1,10 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of, Subscription } from 'rxjs';
 import { Notice } from '../../../models/notice';
 import { NoticeService } from '../../../shared/services/notice/notice.service';
 import { map, switchMap } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EditorComponent } from '../../../shared/ui/editor/editor.component';
 
 @Component({
   selector: 'cbnu-notice-form-page',
@@ -20,6 +21,8 @@ export class NoticeFormPageComponent implements OnInit, OnDestroy {
   notice: Notice;
   formGroup: FormGroup;
 
+  @ViewChild(EditorComponent, { static: false }) editor: EditorComponent;
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private noticeService: NoticeService,
@@ -33,6 +36,7 @@ export class NoticeFormPageComponent implements OnInit, OnDestroy {
 
   submit() {
     this.submitted = true;
+    this.editor.getData();
 
     if (this.formGroup.invalid) {
       return;
