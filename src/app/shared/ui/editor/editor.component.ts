@@ -1,7 +1,7 @@
 import { Component, forwardRef, OnInit, Provider, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ChangeEvent, CKEditor5, CKEditorComponent } from '@ckeditor/ckeditor5-angular';
+import { CKEditor5, CKEditorComponent } from '@ckeditor/ckeditor5-angular';
 import { StorageService } from '../../../core/services/storage/storage.service';
 
 const CONTROL_ACCESSOR: Provider = {
